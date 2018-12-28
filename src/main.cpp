@@ -3110,7 +3110,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
                 return state.DoS(100, error("CheckBlock() : coinbase do not have the dev or fund reward."),
                 REJECT_INVALID, "bad-cb-reward-missing");
 
-            int FoudIndex = -1;
+            //int FoudIndex = -1;
             int DevIndex = -1;
 
             for (unsigned int indx = 0; indx < block.vtx[0].vout.size(); ++indx) {
@@ -3118,17 +3118,15 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
                 ExtractDestination(block.vtx[0].vout[indx].scriptPubKey, tmp_address);
                 if (tmp_address == DevAddress)
                     DevIndex = indx;
-                if (tmp_address == FundAddress)
-                    FoudIndex = indx;
             }
 
-            if(FoudIndex == -1 || DevIndex == -1)
+            if(DevIndex == -1)
                 return state.DoS(100, error("CheckBlock() : coinbase do not have the dev or fund reward (vout)."),
                 REJECT_INVALID, "bad-cb-reward-missing");
 
             CAmount block_value = GetBlockValue(nHeight - 1, block.nTime);
 
-            if (block.vtx[0].vout[DevIndex].nValue < block_value * Params().GetDevFee() / 100 || block.vtx[0].vout[FoudIndex].nValue < block_value * Params().GetFundFee() / 100)
+            if (block.vtx[0].vout[DevIndex].nValue < block_value * Params().GetDevFee() / 100)
                 return state.DoS(100, error("CheckBlock() : coinbase do not have the enough reward for dev or fund."),
                 REJECT_INVALID, "bad-cb-reward-invalid");
 

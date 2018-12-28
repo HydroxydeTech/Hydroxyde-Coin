@@ -140,7 +140,7 @@ public:
         vHDRXDevKey = ParseHex("0403e459e3f3e6b53dcb9c671249f84416b98feb9a489cff60cf59c89d70638cb619d7330a1692fe9e944a2a40e25bea4b0962749ed6b94598925ed83dc4dace78"); // HDRXDevKey for fees
         vHDRXFundKey = ParseHex("041bb74784d3bd937e784dfc9278f7f05976e48401415196f4a9fa9efe7bc6fbebe59dc81f7ba8fd963a704bc7928342b4c0e4ed9cb879d41700a5c4ed350b9707");
         nDevFee = 10; // TEAMFee %
-        nFundFee = 0;
+       // nFundFee = 0;
         nDefaultPort = 19313;
         bnProofOfWorkLimit = ~uint256(0) >> 20;
         bnStartWork = ~uint256(0) >> 24;

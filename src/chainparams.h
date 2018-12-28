@@ -57,7 +57,7 @@ public:
     const std::vector<unsigned char>& xHDRXDevKey() const { return vHDRXDevKey; }
     const std::vector<unsigned char>& xHDRXFundKey() const { return vHDRXFundKey; }
     int GetDevFee() const { return nDevFee; }
-    int GetFundFee() const { return nFundFee; }
+   // int GetFundFee() const { return nFundFee; }
 
     int GetDefaultPort() const { return nDefaultPort; }
     const uint256& ProofOfWorkLimit() const { return bnProofOfWorkLimit; }
@@ -127,7 +127,7 @@ protected:
     std::vector<unsigned char> vHDRXDevKey;
     std::vector<unsigned char> vHDRXFundKey;
     int nDevFee;
-    int nFundFee;
+   // int nFundFee;
     int nDefaultPort;
     uint256 bnProofOfWorkLimit;
     uint256 bnStartWork;

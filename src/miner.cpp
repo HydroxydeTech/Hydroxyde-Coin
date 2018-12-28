@@ -365,12 +365,12 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
             CScript scriptFundPubKeyIn = CScript{} << Params().xHDRXFundKey() << OP_CHECKSIG;
 
             auto vDevReward  = block_value * Params().GetDevFee() / 100;
-            auto vFundReward = block_value * Params().GetFundFee() / 100;
+           // auto vFundReward = block_value * Params().GetFundFee() / 100;
 
             txReward.vout.emplace_back(vDevReward, scriptDevPubKeyIn);
-            txReward.vout.emplace_back(vFundReward, scriptFundPubKeyIn);
+            //txReward.vout.emplace_back(vFundReward, scriptFundPubKeyIn);
 
-            txReward.vout[reward_out_idx].nValue -= (vDevReward + vFundReward);
+            txReward.vout[reward_out_idx].nValue -= (vDevReward);
 
             pblock->vtx[reward_tx_idx] = txReward;
         }
