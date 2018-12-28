@@ -1,0 +1,26 @@
+# /etc/conf.d/hydroxyded: config file for /etc/init.d/hydroxyded
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/hydroxyde/hydroxyde.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/hydroxyded"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/hydroxyded.pid"
+
+# Where to write hydroxyded data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/hydroxyded"
+
+# User and group to own hydroxyded process
+#BITCOIND_USER="hydroxyde"
+#BITCOIND_GROUP="hydroxyde"
+
+# Path to hydroxyded executable
+#BITCOIND_BIN="/usr/bin/hydroxyded"
+
+# Nice value to run hydroxyded under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""
